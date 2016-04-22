@@ -49,6 +49,13 @@ Mano.prototype.puntos = function() {
     var p3 = puntosDeDosCartas(this.carta3,this.carta1);
     var puntos = Math.max(p1,Math.max(p2,p3));
     if (puntos == 0) {
+        p1 = this.carta1.getNumero();
+        p2 = this.carta2.getNumero();
+        p3 = this.carta3.getNumero();
+        if (p1 > 9 || isNaN(p1)) {p1 = 0;}
+        if (p2 > 9 || isNaN(p2)) {p2 = 0;}
+        if (p3 > 9 || isNaN(p3)) {p3 = 0;}
+        puntos = Math.max(p1,Math.max(p2,p3));
     }
     return puntos;
 }
