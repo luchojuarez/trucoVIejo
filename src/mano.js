@@ -1,25 +1,9 @@
-function Carta() {
-    this.palo = "mamaaaaa";
-    this.numero = "AAAAAAAAAAAAAAAAA";
-}
-Carta.prototype.palo;
-Carta.prototype.numero;
+var expect = require ("chai").expect;
 
-Carta.prototype.getPalo = function() {return this.palo;};
-Carta.prototype.getNumero = function() {return this.numero;};
+var moduloCarta = require("../src/carta.js");
+var Carta = moduloCarta.carta;
 
-Carta.prototype.setPalo = function(p) {this.palo = p;}
-Carta.prototype.setNumero = function(n) {this.numero = n;}
-
-Carta.prototype.getPuntos = function() {
-    if(this.getNumero()<10){
-        return this.numero;
-    }
-    else {
-        return 10;
-    }
-}
-
+// crea el prototipo mano
 function Mano() {
     Mano.prototype.carta1 = new Carta();
     Mano.prototype.carta2 = new Carta();
@@ -49,10 +33,13 @@ Mano.prototype.puntos = function() {
     var p3 = puntosDeDosCartas(this.carta3,this.carta1);
     var puntos = Math.max(p1,Math.max(p2,p3));
     if (puntos == 0) {
+        if (this.carta1.getNumero()<8) { p1 = this.carta1.getNumero();}
+        if (this.carta2.getNumero()<8) { p2 = this.carta2.getNumero();}
+        if (this.carta3.getNumero()<8) { p3 = this.carta3.getNumero();}
+        puntos = Math.max(p1,Math.max(p2,p3));
     }
     return puntos;
 }
 
 
 module.exports.mano = Mano;
-module.exports.carta = Carta;
