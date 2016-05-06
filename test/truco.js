@@ -1,9 +1,12 @@
 var expect = require ("chai").expect;
 
-var moduloMano = require("../main.js");
+var moduloMano = require("../src/objects/mano.js");
 var Mano = moduloMano.mano;
 
-var moduloCarta = require("../main.js");
+var moduloMazo = require("../src/objects/mazo.js");
+var Mazo = moduloMazo.mazo;
+
+var moduloCarta = require("../src/objects/carta.js")
 var Carta = moduloMano.carta;
 
 describe ("suma puntos bien",function() {
@@ -41,5 +44,12 @@ describe ("suma puntos bien",function() {
         m.carta3.setPalo("espada");
         m.carta3.setNumero(6);
         expect(m.puntos()).to.equal(6);
+    })
+})
+
+describe("Mazo",function() {
+    var m = new Mazo();
+    it("size of deck", function() {
+        expect(m.sorted().length).to.equal(40);
     })
 })
