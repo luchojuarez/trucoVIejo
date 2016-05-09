@@ -1,0 +1,22 @@
+
+
+* Como invitado quiero registrarme en le sitio para jugar.
+* Como invitado quiro jugar.
+* Como jugador quiero iniciar una partida.
+* Como jugador que creo una partida quiero repatrit las cartas.
+* Como jugador que tiene el turno quiero cantar envido.
+* Como jugador que tengo el turno queiro cantar truco.
+* Como jugador en respuesta a un envido queiro redoblar. (envido, real envido, falta envido).
+* Como jugador en respuesta al truco (retruco) quero redoblar (retruco, quiero vale cuatro). 
+* Como jugador en una partida quero ver la tabla de puntos.
+* Como jugador en respuesta a un envido o truco (o algun redoble) deseo rechazarlo.
+* Como jugador que no acepte envido o truco, queiro saber cuantos puntos gano el otro.
+* Como jugador en una partida quiero ver mis cartas y calcular mis puntos (puntos para el envido).
+
+
+* Como jugador quero en el comienzo de una ronda tener 3 cartas al azar del MAZO.
+* Como jugador en la primera mano de una ronda queiro poder cantar envido.
+* Como jugador que tiene el turno quiero poder jugar una carta.
+
+
+si ya se canto el envido no se puede cantar de nuevo.
