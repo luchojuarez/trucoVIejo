@@ -46,10 +46,3 @@ describe ("suma puntos bien",function() {
         expect(m.puntos()).to.equal(6);
     })
 })
-
-describe("Mazo",function() {
-    var m = new Mazo();
-    it("size of deck", function() {
-        expect(m.sorted().length).to.equal(40);
-    })
-})
