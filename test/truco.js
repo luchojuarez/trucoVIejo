@@ -3,11 +3,11 @@ var expect = require ("chai").expect;
 var moduloMano = require("../src/objects/mano.js");
 var Mano = moduloMano.mano;
 
-var moduloMazo = require("../src/objects/mazo.js");
+/*var moduloMazo = require("../src/objects/mazo.js");
 var Mazo = moduloMazo.mazo;
-
+*/
 var moduloCarta = require("../src/objects/carta.js")
-var Carta = moduloMano.carta;
+var Carta = moduloCarta.carta;
 
 describe ("suma puntos bien",function() {
     var m = new Mano();
@@ -47,9 +47,9 @@ describe ("suma puntos bien",function() {
     })
 })
 
-describe("Mazo",function() {
+/*describe("Mazo",function() {
     var m = new Mazo();
     it("size of deck", function() {
         expect(m.sorted().length).to.equal(40);
     })
-})
+})*/

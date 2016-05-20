@@ -1,7 +1,16 @@
+
 function Carta() {
-    this.palo = "mamaaaaa";
-    this.numero = "AAAAAAAAAAAAAAAAA";
+    this.palo = null;
+    this.numero = null;
 }
+
+function Carta(palo,numero) {
+    this.palo = palo;
+    this.numero = numero;
+    this.peso = null; //TODO getPeso(palo,numero) retorna el valor de la carta correspondiente 
+}
+
+Carta.prototype.peso;
 Carta.prototype.palo;
 Carta.prototype.numero;
 
