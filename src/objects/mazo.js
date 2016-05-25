@@ -38,17 +38,6 @@ Mazo.prototype.cantCartas = function () {
     return this.cartas.length;
 }
 
-// Mazo.prototype.mezclar = function () {
-// //mezclar las cartas del mazo intercambiando las cartas n=cartas.length veces
-//     var temp;
-//     var j,k;
-//     for (j=0;j < this.cartas.length;j++) {
-// 	k = Math.floor(Math.random()) * this.cards.length;
-// 	temp = this.cartas[j];
-// 	this.cartas[j] = this.cartas[k];
-// 	this.cartas[k] = temp;
-//     }
-// }
 
 Mazo.prototype.addCarta = function (carta) {
 //agrega una carta al tope del mazo

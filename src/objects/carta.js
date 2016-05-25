@@ -18,8 +18,9 @@ Carta.prototype.getPeso = function() {
         "Oro":    [ 8, 9, 9, 1, 2, 3, 10, 0, 0, 5, 6, 7],
         "Basto":  [13, 9, 9, 1, 2, 3,  4, 0, 0, 5, 6, 7]
     };
-    return this.palo && this.numero ? weight[this.palo][this.numero] : 0;
+    return this.palo && this.numero ? weight[this.palo][this.numero-1] : 0;
 }
+
 
 Carta.prototype.peso;
 Carta.prototype.palo;

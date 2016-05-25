@@ -10,12 +10,15 @@ describe("Mazo",function() {
     it("size of deck", function() {
         expect(m.mix().length).to.equal(40);
     })
-    // it("type of functions", function() {
-    //     assert.typeOf(m.darCartas, 'function');
-    //     assert.typeOf(m.repartir, 'function');
-    // })
+    it("type of functions", function() {
+        //assert.typeOf(m.darCartas, 'function');
+        //assert.typeOf(m.repartir, 'function');
+    })
     it ("length of things",function() {
         //assert.equal(m.darCartas().length,3);
         assert.equal(m.mix().length,40);
+    })
+    it("size of deck", function() {
+        expect(m.sorted().length).to.equal(40);
     })
 })
