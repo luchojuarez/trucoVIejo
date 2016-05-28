@@ -3,7 +3,7 @@ var expect = require ("chai").expect;
 var assert = require ("chai").assert;
 
 var moduloJugador = require("../src/objects/jugador.js");
-var Jugador = moduloJugador.Jugador;
+var Jugador = moduloJugador.jugador;
 
 describe ("Player",function() {
     var p = new Jugador("Lucho");

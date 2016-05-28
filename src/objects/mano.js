@@ -2,10 +2,10 @@ var moduloCarta = require("../objects/carta.js");
 var Carta = moduloCarta.carta;
 
 // crea el prototipo mano
-function Mano() {
-    Mano.prototype.carta1 = new Carta();
-    Mano.prototype.carta2 = new Carta();
-    Mano.prototype.carta3 = new Carta();
+function Mano(c1,c2,c3) {
+    Mano.prototype.carta1 = c1;
+    Mano.prototype.carta2 = c2;
+    Mano.prototype.carta3 = c3;
 }
 
 // Dada dos cartas retorna el los puntos que suman entre ambas
@@ -20,6 +20,7 @@ function puntosDeDosCartas(a,b) {
             puntos += b.getNumero();
         }
     }
+    //console.log(a,b);
     //console.log(a.getPalo(), b.getPalo(), "=", a.getPalo() == b.getPalo() , puntos);
     return puntos;
 }

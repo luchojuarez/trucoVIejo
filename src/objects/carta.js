@@ -4,12 +4,34 @@ function Carta(numbrer,suit) {
 }
 Carta.prototype.palo;
 Carta.prototype.numero;
+Carta.prototype.peso;
+
+
+Carta.prototype.getPeso = function() {
+    var weight = {
+        "Copa":   [ 8, 9, 9, 1, 2, 3,  4, 0, 0, 5, 6, 7],
+        "Espada": [14, 9, 9, 1, 2, 3, 11, 0, 0, 5, 6, 7],
+        "Oro":    [ 8, 9, 9, 1, 2, 3, 10, 0, 0, 5, 6, 7],
+        "Basto":  [13, 9, 9, 1, 2, 3,  4, 0, 0, 5, 6, 7]
+    };
+    return this.palo && this.numero ? weight[this.palo][this.numero-1] : 0;
+}
 
 Carta.prototype.getPalo = function() {return this.palo;};
 Carta.prototype.getNumero = function() {return this.numero;};
 
-Carta.prototype.setPalo = function(p) {this.palo = p;}
-Carta.prototype.setNumero = function(n) {this.numero = n;}
+Carta.prototype.setPalo = function(p) {
+    this.palo = p;
+    if (!(this.numero === undefined)) {
+        this.peso = this.getPeso();
+    }
+}
+Carta.prototype.setNumero = function(n) {
+    this.numero = n;
+    if (!(this.palo === undefined)) {
+        this.peso = this.getPeso();
+    }
+}
 
 Carta.prototype.getPuntos = function() {
     if(this.getNumero()<10)

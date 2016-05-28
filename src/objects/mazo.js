@@ -1,19 +1,27 @@
 var _ = require('lodash');
 var moduloCarta = require("../objects/carta.js");
 var Carta = moduloCarta.carta;
-var mazo = [];
+var deck = [];
 
 var suits = ['oro', 'copa', 'espada', 'basto'];
 var cardNumbers = [1, 2, 3, 4, 5, 6, 7, 10, 11, 12];
 
 function Mazo () {
-//    Mazo.prototype.mazo = Mazo.sorted();
+    Mazo.prototype.deck = this.mix();
 }
 Mazo.prototype.darCartas = function(){
-    return [1,2,3];
+    //copio 3 cartas
+    var carta1 = deck[0];
+    var carta2 = deck[1];
+    var carta3 = deck[2];
+    //las saco del deck
+    Mazo.prototype.deck.splice(0,3);
+    //retorno las 3 cartas;
+    return [carta1,carta2,carta3];
 }
-Mazo.prototype.repartir = function(){
-    return [];
+
+Mazo.prototype.getMazo = function() {
+    return Mazo.prototype.deck;
 }
 
 Mazo.prototype.sorted = function(){
