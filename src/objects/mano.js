@@ -3,11 +3,10 @@ var Carta = moduloCarta.carta;
 
 // crea el prototipo mano
 function Mano() {
-    Mano.prototype.carta1 = new Carta();
-    Mano.prototype.carta2 = new Carta();
-    Mano.prototype.carta3 = new Carta();
+    this.carta1 = new Carta();
+    this.carta2 = new Carta();
+    this.carta3 = new Carta();
 }
-
 // Dada dos cartas retorna el los puntos que suman entre ambas
 function puntosDeDosCartas(a,b) {
     var puntos=0;
