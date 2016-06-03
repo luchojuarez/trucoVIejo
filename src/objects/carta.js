@@ -41,4 +41,15 @@ Carta.prototype.getPuntos = function() {
     }
 }
 
+/*
+   Enfrentar esta carta contra otra
+output:
+   -negativo= la segunda le gana a esta
+   -postivo= esta le gana a la segunda
+   -0= Empate
+*/
+Carta.prototype.enfrentar = function(carta) {
+    var res = this.peso - carta.peso;
+    return res;
+}
 module.exports.carta = Carta;
