@@ -30,7 +30,6 @@ function Ronda(juego,mano) {
 	this.duelos = [];
 	this.quienJuega = mano; //El turno de cada ronda empieza con la mano
 	this.dueloCorriente = new Duel(this);
-	
 	this.jugadasTruco = [truco,retruco,valecuatro] //cada vez que se desapila se suma un punto a los resu
 	
 }
