@@ -18,25 +18,8 @@ function Carta(palo,numero) {
     this.peso = weight[palo][numero-1];
 }
 
-<<<<<<< HEAD
-Carta.prototype.getPeso = function() {
-    var weight = {
-        "Copa":   [ 8, 9, 9, 1, 2, 3,  4, 0, 0, 5, 6, 7],
-        "Espada": [14, 9, 9, 1, 2, 3, 11, 0, 0, 5, 6, 7],
-        "Oro":    [ 8, 9, 9, 1, 2, 3, 10, 0, 0, 5, 6, 7],
-        "Basto":  [13, 9, 9, 1, 2, 3,  4, 0, 0, 5, 6, 7]
-    };
-    return this.palo && this.numero ? weight[this.palo][this.numero-1] : 0;
-}
 
-
-Carta.prototype.peso;
-Carta.prototype.palo;
-Carta.prototype.numero;
-
-=======
 Carta.prototype.getPeso = function() {return this.peso};
->>>>>>> ba348e94e15967b9278452d76ccce49b5d1ce481
 Carta.prototype.getPalo = function() {return this.palo;};
 Carta.prototype.getNumero = function() {return this.numero;};
 
