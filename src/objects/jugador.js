@@ -2,11 +2,14 @@ var moduloMano = require("../objects/mano.js");
 var Mano = moduloMano.mano;
 
 
-
 function Jugador(str) {
-    this.name=str;	//Nombre del jugador
+    this.nombre=str;	//Nombre del jugador
     this.mano=new Mano(); //Mano del jugador
 }
+
+//Equipo del jugador: si es positivo pertence a un equipo, si es negativo pertenece al otro equipo. 
+//Solo puede haber 2 equipos
+Jugador.prototype.equipo;
 
 /*
 robarMano(mazo) inicializa la mano del jugador con 3 cartas sacando las cartas de un mazo
@@ -24,7 +27,7 @@ Jugador.prototype.puntosEnvido;
 Jugador.prototype.jugarCarta = function (i) { return i } 
 
 Jugador.prototype.getName = function () {
-    return this.name;
+    return this.nombre;
 }
 
 module.exports.Jugador = jugador;
