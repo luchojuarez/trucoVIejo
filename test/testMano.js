@@ -42,3 +42,4 @@ describe ("suma puntos bien",function() {
         expect(m.puntos()).to.equal(6);
     })
 })
+
