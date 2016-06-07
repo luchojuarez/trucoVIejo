@@ -3,10 +3,15 @@ var Carta = moduloCarta.carta;
 
 // crea el prototipo mano
 function Mano() {
-    this.carta1 = new Carta();
-    this.carta2 = new Carta();
-    this.carta3 = new Carta();
+    this.cartas = [];
 }
+function Mano(cartas) {
+    var i = 0;
+        this.cartas= [];
+    while (cartas.length > 0 && i < 3) {
+        tnis.cartas.push(cartas.pop());
+        i++;
+    }
 // Dada dos cartas retorna el los puntos que suman entre ambas
 function puntosDeDosCartas(a,b) {
     var puntos=0;
@@ -19,20 +24,23 @@ function puntosDeDosCartas(a,b) {
 
 // retorna los puntos de la mano actual (this)
 Mano.prototype.puntos = function() {
-    var p1 = puntosDeDosCartas(this.carta1,this.carta2);
-    var p2 = puntosDeDosCartas(this.carta2,this.carta3);
-    var p3 = puntosDeDosCartas(this.carta3,this.carta1);
+    var p1 = puntosDeDosCartas(this.cartas[0],this.cartas[1]);
+    var p2 = puntosDeDosCartas(this.cartas[0],this.cartas[2]);
+    var p3 = puntosDeDosCartas(this.cartas[1],this.cartas[2]);
     var puntos = Math.max(p1,Math.max(p2,p3));
     
 /* Que hace esto?   
       if (puntos == 0) {
         if (this.carta1.getNumero()<8) { p1 = this.carta1.getNumero();}
         if (this.carta2.getNumero()<8) { p2 = this.carta2.getNumero();}
-        if (this.carta3.getNumero()<8) { p3 = this.carta3.getNumero();}
         puntos = Math.max(p1,Math.max(p2,p3));
+        if (this.carta3.getNumero()<8) { p3 = this.carta3.getNumero();}
         }  */
     return puntos;
 }
 
+TODO: Get 
+Mano.prototype.sacarTres = function (mazo) {
+}
 
 module.exports.mano = Mano;
