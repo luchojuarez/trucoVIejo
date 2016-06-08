@@ -1,22 +1,24 @@
-function Carta(numbrer,suit) {
-    this.palo = numbrer;
-    this.numero = suit;
-}
+Carta.prototype.weight = {
+    "Copa":   [ 8, 9, 9, 1, 2, 3,  4, 0, 0, 5, 6, 7],
+    "Espada": [14, 9, 9, 1, 2, 3, 11, 0, 0, 5, 6, 7],
+    "Oro":    [ 8, 9, 9, 1, 2, 3, 10, 0, 0, 5, 6, 7],
+    "Basto":  [13, 9, 9, 1, 2, 3,  4, 0, 0, 5, 6, 7]
+};
 Carta.prototype.palo;
 Carta.prototype.numero;
 Carta.prototype.peso;
 
-
-Carta.prototype.getPeso = function() {
-    var weight = {
-        "Copa":   [ 8, 9, 9, 1, 2, 3,  4, 0, 0, 5, 6, 7],
-        "Espada": [14, 9, 9, 1, 2, 3, 11, 0, 0, 5, 6, 7],
-        "Oro":    [ 8, 9, 9, 1, 2, 3, 10, 0, 0, 5, 6, 7],
-        "Basto":  [13, 9, 9, 1, 2, 3,  4, 0, 0, 5, 6, 7]
-    };
-    return this.palo && this.numero ? weight[this.palo][this.numero-1] : 0;
+function Carta(number,suit) {
+    this.palo = suit;
+    this.numero = number;
+    //console.log('create a new card ',this);
+    var aux = this.weight[suit]
+    console.log(aux);
+    this.peso = this.weight[suit];
 }
 
+
+Carta.prototype.getPeso = function() {return this.peso;}
 Carta.prototype.getPalo = function() {return this.palo;};
 Carta.prototype.getNumero = function() {return this.numero;};
 

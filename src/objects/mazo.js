@@ -3,7 +3,7 @@ var moduloCarta = require("../objects/carta.js");
 var Carta = moduloCarta.carta;
 var deck = [];
 
-var suits = ['oro', 'copa', 'espada', 'basto'];
+var suits = ['Oro', 'Copa', 'Espada', 'Basto'];
 var cardNumbers = [1, 2, 3, 4, 5, 6, 7, 10, 11, 12];
 
 function Mazo () {
@@ -23,6 +23,17 @@ Mazo.prototype.darCartas = function(){
 Mazo.prototype.getMazo = function() {
     return Mazo.prototype.deck;
 }
+
+// Mazo.prototype.sorted = function(){
+//     var arreglo = new Array();
+//     for (var suit = 0; suit < suits.length; i++) {
+//         for (var number = 0; number < cardNumbers.length; i++) {
+//             arreglo.push(new Carta(cardNumbers[number],suits[suit]));
+//         }
+//     }
+//     console.log(arreglo);
+//     return arreglo;
+// }
 
 Mazo.prototype.sorted = function(){
   return _.flatten( _.map(suits, function(suit){

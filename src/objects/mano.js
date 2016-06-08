@@ -20,7 +20,6 @@ function puntosDeDosCartas(a,b) {
             puntos += b.getNumero();
         }
     }
-    //console.log(a,b);
     //console.log(a.getPalo(), b.getPalo(), "=", a.getPalo() == b.getPalo() , puntos);
     return puntos;
 }

@@ -13,10 +13,10 @@ describe("Mazo",function() {
     var player = new Jugador("Lucho");
     var mano = mazo.darCartas()
     player.setMano(mano);
-    
-    // it("type of deck", function() {
-    //     assert.typeOf(mazo.getMazo()[0], "{Object (palo, numero)}");
-    // })
+
+    it("type of deck", function() {
+        assert.typeOf(mazo.getMazo()[0], "{ Object (palo, numero) }");
+    })
 
     it("size of mano", function() {
         expect(mano.length).to.equal(3);
