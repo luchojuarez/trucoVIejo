@@ -7,6 +7,10 @@ Jugador.prototype.setMano = function (m){
     mano = m;
 }
 
+var moduloCarta = require("../objects/carta.js");
+var Carta = moduloCarta.carta;
+
+
 function Jugador(str) {
     this.name=str;
 }
@@ -16,3 +20,4 @@ Jugador.prototype.getName = function () {
 }
 
 module.exports.jugador = Jugador;
+module.exports.Jugador = Jugador;

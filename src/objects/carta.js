@@ -1,11 +1,13 @@
-function Carta(numbrer,suit) {
-    this.palo = numbrer;
-    this.numero = suit;
-}
+Carta.prototype.peso;
 Carta.prototype.palo;
 Carta.prototype.numero;
 Carta.prototype.peso;
 
+function Carta(palo,numero) {
+    this.palo = palo;
+    this.numero = numero;
+    this.peso = this.getPeso();
+}
 
 Carta.prototype.getPeso = function() {
     var weight = {
@@ -16,6 +18,7 @@ Carta.prototype.getPeso = function() {
     };
     return this.palo && this.numero ? weight[this.palo][this.numero-1] : 0;
 }
+
 
 Carta.prototype.getPalo = function() {return this.palo;};
 Carta.prototype.getNumero = function() {return this.numero;};
@@ -28,7 +31,7 @@ Carta.prototype.setPalo = function(p) {
 }
 Carta.prototype.setNumero = function(n) {
     this.numero = n;
-    if (!(this.palo === undefined)) {
+    if (!(this.peso === undefined)) {
         this.peso = this.getPeso();
     }
 }

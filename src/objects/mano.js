@@ -2,10 +2,10 @@ var moduloCarta = require("../objects/carta.js");
 var Carta = moduloCarta.carta;
 
 // crea el prototipo mano
-function Mano(c1,c2,c3) {
-    Mano.prototype.carta1 = c1;
-    Mano.prototype.carta2 = c2;
-    Mano.prototype.carta3 = c3;
+function Mano(arregloCartas) {
+    Mano.prototype.carta1 = arregloCartas[0];
+    Mano.prototype.carta2 = arregloCartas[1];
+    Mano.prototype.carta3 = arregloCartas[2];
 }
 
 // Dada dos cartas retorna el los puntos que suman entre ambas
@@ -20,8 +20,6 @@ function puntosDeDosCartas(a,b) {
             puntos += b.getNumero();
         }
     }
-    //console.log(a,b);
-    //console.log(a.getPalo(), b.getPalo(), "=", a.getPalo() == b.getPalo() , puntos);
     return puntos;
 }
 
@@ -30,14 +28,14 @@ Mano.prototype.puntos = function() {
     var p1 = puntosDeDosCartas(this.carta1,this.carta2);
     var p2 = puntosDeDosCartas(this.carta2,this.carta3);
     var p3 = puntosDeDosCartas(this.carta3,this.carta1);
-    var puntos = Math.max(p1,Math.max(p2,p3));
-    if (puntos == 0) {
+    var puntosActuales = Math.max(p1,Math.max(p2,p3));
+    if (puntosActuales == 0) {
         if (this.carta1.getNumero()<8) { p1 = this.carta1.getNumero();}
         if (this.carta2.getNumero()<8) { p2 = this.carta2.getNumero();}
         if (this.carta3.getNumero()<8) { p3 = this.carta3.getNumero();}
-        puntos = Math.max(p1,Math.max(p2,p3));
+        puntosActuales = Math.max(p1,Math.max(p2,p3));
     }
-    return puntos;
+    return puntosActuales;
 }
 
 

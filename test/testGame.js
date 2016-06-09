@@ -13,7 +13,10 @@ describe("Game",function() {
     var p2 = new Jugador("Yacki");
     var g = new Game(p1,p2);
 
+    console.log("mazo.length=",g.getMazo().getMazo().length);
+
     it ("size of deck",function() {
-        assert.equal((g.getMazo().getMazo()).length,34);
+        //assert.equal((g.getMazo().getMazo()).length,34);
+        expect(g.getMazo().getMazo().length).to.equal(34);
     })
 })
